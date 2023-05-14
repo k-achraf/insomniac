@@ -1,0 +1,4 @@
+enum Types{
+  radio,
+  text,
+}
