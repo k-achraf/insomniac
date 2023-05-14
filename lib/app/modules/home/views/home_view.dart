@@ -58,7 +58,7 @@ class HomeView extends GetView<HomeController> {
                 width: context.width - 46.w,
                 child: Button(
                   onPressed: (){
-
+                    Get.toNamed(Routes.LONG_TEST);
                   },
                   text: 'takethelongtest'.tr,
                   bgColor: MyColors.selectedColor,

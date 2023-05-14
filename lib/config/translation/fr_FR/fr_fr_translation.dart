@@ -65,5 +65,6 @@ const Map<String, String> frFR = {
   "fbad":"Assez mauvaise",
   "vbad":"Très mauvaise",
   "no":"Non",
-  "yes":"Oui"
+  "yes":"Oui",
+  "answer": "Réponse"
 };

@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 import 'package:sklite/naivebayes/naive_bayes.dart';
 import 'package:sklite/utils/io.dart';
 
-import '../../../data/enums/result.dart';
 import '../../../data/enums/types.dart';
 import '../../../data/models/question.dart';
 
