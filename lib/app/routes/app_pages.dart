@@ -8,6 +8,8 @@ import '../modules/result/bindings/result_binding.dart';
 import '../modules/result/views/result_view.dart';
 import '../modules/short_test/bindings/short_test_binding.dart';
 import '../modules/short_test/views/short_test_view.dart';
+import '../modules/test_start/bindings/test_start_binding.dart';
+import '../modules/test_start/views/test_start_view.dart';
 
 part 'app_routes.dart';
 
@@ -36,6 +38,11 @@ class AppPages {
       name: _Paths.RESULT,
       page: () => const ResultView(),
       binding: ResultBinding(),
+    ),
+    GetPage(
+      name: _Paths.TEST_START,
+      page: () => const TestStartView(),
+      binding: TestStartBinding(),
     ),
   ];
 }

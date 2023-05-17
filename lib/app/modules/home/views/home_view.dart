@@ -27,7 +27,7 @@ class HomeView extends GetView<HomeController> {
               SizedBox(height: context.mediaQueryPadding.top + 30.h,),
               Image.asset(
                 'assets/images/quiz.png',
-                width: context.width / 3,
+                width: MediaQuery.of(context).size.height / 3,
                 fit: BoxFit.cover,
               ),
               SizedBox(height: 20.h,),

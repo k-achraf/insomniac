@@ -7,6 +7,7 @@ abstract class Routes {
   static const LONG_TEST = _Paths.LONG_TEST;
   static const SHORT_TEST = _Paths.SHORT_TEST;
   static const RESULT = _Paths.RESULT;
+  static const TEST_START = _Paths.TEST_START;
 }
 
 abstract class _Paths {
@@ -15,4 +16,5 @@ abstract class _Paths {
   static const LONG_TEST = '/long-test';
   static const SHORT_TEST = '/short-test';
   static const RESULT = '/result';
+  static const TEST_START = '/test-start';
 }
