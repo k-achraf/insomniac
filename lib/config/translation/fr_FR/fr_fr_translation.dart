@@ -2,8 +2,8 @@ const Map<String, String> frFR = {
   "taketheshorttest": " DÉMARRER LE COURT TEST",
   "takethelongtest": "DÉMARRER LE LONG TEST",
   "desc": "Insomniac est un outil convivial conçu pour aider les individus avec le diagnostic de l’insomnie. \n L’application dispose d’un ensemble de questions et utilise des algorithmes ML pour analyser les réponses aux questions et fournir une évaluation personnalisée de la probabilité d’une personne ayant de l’insomnie. \n Insomniac offre deux options de test pour aider dans le diagosis de l’insomnie : un long test et un court test",
-  "stest":" court Test",
-  "ltest": " Long Test",
+  "stest":"Index de Sévérité de l'Insomnie (ISI) ",
+  "ltest": " Combibaison des ISI &PSQI",
   "index": "Question {currentIndex}",
   "question1": " Difficultés à s'endormir ",
   "question2": " Difficultés à rester endormi(e)",
@@ -66,5 +66,8 @@ const Map<String, String> frFR = {
   "vbad":"Très mauvaise",
   "no":"Non",
   "yes":"Oui",
-  "answer": "Réponse"
+  "answer": "Réponse",
+  "stestdesc":"Le test ISI est une évaluation rapide qui mesure la gravité des symptômes de l’insomnie chez les individus. Il se compose de sept questions et prend entre 2-3 minutes à remplir. Si vous êtes prêt à passer le test, cliquez sur (Passer au test).",
+  "ltestdesc":"Le test long comprend l’ISI (indice de gravité de l’insomnie) et l’PSQI (indice de qualité du sommeil de Pittsburgh). L’IQFP comprend un questionnaire comportant 19 questions qui évaluent les habitudes de sommeil, les perturbations et les dysfonctionnements diurnes et qui fournissent une évaluation de la qualité globale du sommeil sur une période d’un mois. Le test complet comprend 27 questions et prend généralement de 4 à 5 minutes. Si vous êtes prêt à commencer le test, veuillez cliquer sur (Passer au test).",
+  "start": "Passer au Test"
 };

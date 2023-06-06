@@ -2,8 +2,8 @@ const Map<String, String> enUS = {
   "taketheshorttest": "TAKE THE SHORT TEST",
   "desc": "Insomniac is a user-friendly tool designed to help individuals with the diagnosis of insomnia.The app features a collection of questions and utilizes ML algorithms to analyze the responses to the questions and provide a personalized assessment of the likelihood of an individual having insomnia.Insomniac offers two testing options to aid in th diagosis of insomnia: a long test and a short test",
   "takethelongtest": "TAKE THE LONG TEST",
-  "stest":" SHORT TEST",
-  "ltest":" LONG TEST",
+  "stest":" Insomnia Severity Index Test",
+  "ltest":" ISI & PSQI",
   "index": "Question {currentIndex}",
   "question1": "How much do you experience difficulty falling asleep",
   "question2": "How much do you experience difficulty staying asleep ",
@@ -66,5 +66,8 @@ const Map<String, String> enUS = {
   "vbad":"Very bad",
   "no":"No",
   "yes":"Yes",
-  "answer": "Answer"
+  "answer": "Answer",
+  "stestdesc":"The ISI test is a quick assessment that measures the severity of insomnia symptoms in individuals. It consists of seven questions and takes between 2-3 minutes to complete. If you are ready to take the test, click (Proceed to the Test).",
+  "ltestdesc":"The long test  comprises both ISI (Insomnia Severity Index) and PSQI (Pittsburgh Sleep Quality Index). PSQI involves a questionnaire with 19 inquiries that assess sleep patterns, disturbances, and daytime dysfunction, providing an evaluation of overall sleep quality over a month. The complete test encompasses 27 questions and typically takes around 4-5 minutes to complete. If you are prepared to begin the test, kindly proceed by clicking on (Proceed to the Test).",
+  "start":"Proceed to the Test"
 };

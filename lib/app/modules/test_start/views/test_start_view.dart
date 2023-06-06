@@ -1,9 +1,10 @@
+import 'package:Insomniac/app/components/button.dart';
+import 'package:Insomniac/config/theme/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
 
-import '../../../../config/theme/styles.dart';
-import '../../../components/button.dart';
 import '../controllers/test_start_controller.dart';
 
 class TestStartView extends GetView<TestStartController> {
@@ -12,35 +13,62 @@ class TestStartView extends GetView<TestStartController> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        top: true,
-        bottom: true,
-        child: SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
-          child: Column(
-            children: [
-              SizedBox(height: context.mediaQueryPadding.top,),
-              Image.asset(
-                Get.arguments['image'],
-                width: 200,
-                height: 200,
-                fit: BoxFit.cover,
-              ),
-              Text(
-                Get.arguments['desc'].tr,
-                style: Styles.body1TextStyle.copyWith(
-                  color: Colors.black
+          top: true,
+          bottom: true,
+          child: SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
+            padding: EdgeInsets.symmetric(horizontal: 23.w),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                SizedBox(
+                  height: context.mediaQueryPadding.top,
                 ),
-              ),
-              Button(
-                onPressed: (){
-                  Get.toNamed(Get.arguments['route']);
-                },
-                text: Get.arguments['button'].tr,
-              )
-            ],
-          ),
-        ),
-      ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    IconButton(
+                      onPressed: () {
+                        Get.back();
+                      },
+                      icon: const Icon(
+                        Icons.arrow_back_ios,
+                        size: 20,
+                        color: Color(0xFF3642D7),
+                      ),
+                    ),
+                    //
+                    const SizedBox()
+                  ],
+                ),
+                SizedBox(
+                  height: 20.h,
+                ),
+                Image.asset(
+                  Get.arguments['image'],
+                  height: 200,
+                  width: 200,
+                  color: const Color(0xFFAFAFAF),
+                ),
+                SizedBox(
+                  height: 20.h,
+                ),
+                Text(Get.arguments['desc'],
+                  style: Styles.body3TextStyle.copyWith(
+                    color: context.theme.canvasColor
+                  ),),
+                SizedBox(
+                  height: 20.h,
+                ),
+                Button(
+                  text: Get.arguments['button'],
+                  onPressed: () {
+                    Get.toNamed(Get.arguments['route']);
+                  })
+              ],
+            ),
+          )),
     );
   }
 }

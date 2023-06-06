@@ -50,7 +50,12 @@ class HomeView extends GetView<HomeController> {
                 width: context.width - 46.w,
                 child: Button(
                   onPressed: (){
-                    Get.toNamed(Routes.SHORT_TEST);
+                    Get.toNamed(Routes.TEST_START, arguments: {
+                      'image':'assets/images/img1.png',
+                      'desc':'stestdesc'.tr,
+                      'button':'start'.tr,
+                      'route':Routes.SHORT_TEST
+                    });
                   },
                   text: 'taketheshorttest'.tr,
                 ),
@@ -60,7 +65,12 @@ class HomeView extends GetView<HomeController> {
                 width: context.width - 46.w,
                 child: Button(
                   onPressed: (){
-                    Get.toNamed(Routes.LONG_TEST);
+                    Get.toNamed(Routes.TEST_START, arguments: {
+                      'image':'assets/images/img2.png',
+                      'desc':'ltestdesc'.tr,
+                      'button':'start'.tr,
+                      'route':Routes.LONG_TEST
+                    });
                   },
                   text: 'takethelongtest'.tr,
                   bgColor: context.theme.cardColor,
