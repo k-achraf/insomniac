@@ -1,3 +1,4 @@
+import 'package:Insomniac/config/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -25,7 +26,7 @@ class SelectButton extends StatelessWidget {
               const EdgeInsets.all(18)
           ),
           backgroundColor: MaterialStateProperty.all<Color>(
-            selected ? const Color(0xFF45C486) : Colors.white
+            selected ? const Color(0xFF45C486) : context.theme.cardColor
           ),
         ),
         onPressed: (){
@@ -37,7 +38,7 @@ class SelectButton extends StatelessWidget {
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.w500,
-              color: selected ? Colors.white : const Color(0xFF45C486)
+              color: selected ? MyColors.darkTextColor : const Color(0xFF45C486)
             ),
           ),
         ),

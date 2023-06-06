@@ -44,7 +44,9 @@ class ShortTestView extends GetView<ShortTestController> {
                     ),
                     Text(
                       'stest'.tr,
-                      style: Styles.headLine3TextStyle,
+                      style: Styles.headLine3TextStyle.copyWith(
+                        color: context.theme.canvasColor
+                      ),
                     ),
                     const SizedBox()
                   ],
@@ -57,7 +59,7 @@ class ShortTestView extends GetView<ShortTestController> {
                       width: context.width - 100,
                       height: 20,
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: context.theme.cardColor,
                         borderRadius: BorderRadius.circular(16)
                       ),
                       alignment: Storage.getCurrentLocal().languageCode.toLowerCase().contains('ar') ? Alignment.centerRight : Alignment.centerLeft,
@@ -74,14 +76,18 @@ class ShortTestView extends GetView<ShortTestController> {
                     const SizedBox(width: 10.0,),
                     Text(
                       '${testController.question +  1} / ${testController.questions.length}',
-                      style: Styles.body3TextStyle,
+                      style: Styles.body3TextStyle.copyWith(
+                        color: context.theme.canvasColor
+                      ),
                     )
                   ],
                 ),
                 const SizedBox(height: 50,),
                 Text(
                   testController.questions[testController.question].question,
-                  style: Styles.headLine2TextStyle,
+                  style: Styles.headLine2TextStyle.copyWith(
+                    color: context.theme.badgeTheme.textColor
+                  ),
                 ),
                 SizedBox(height: 30.h,),
                 for(int i = 0; i < testController.questions[testController.question].options!.length; i++)
@@ -107,7 +113,7 @@ class ShortTestView extends GetView<ShortTestController> {
                         onPressed: (){
                           controller.previousQuestion();
                         },
-                        bgColor: MyColors.selectedColor,
+                        bgColor: context.theme.cardColor,
                         textColor: MyColors.thirdColor,
                       ),
                     ),

@@ -44,7 +44,9 @@ class LongTestView extends GetView<LongTestController> {
                     ),
                     Text(
                       'ltest'.tr,
-                      style: Styles.headLine3TextStyle,
+                      style: Styles.headLine3TextStyle.copyWith(
+                        color: context.theme.canvasColor
+                      ),
                     ),
                     const SizedBox()
                   ],
@@ -57,7 +59,7 @@ class LongTestView extends GetView<LongTestController> {
                       width: context.width - 120,
                       height: 20,
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: context.theme.cardColor,
                         borderRadius: BorderRadius.circular(16)
                       ),
                       alignment: Storage.getCurrentLocal().languageCode.toLowerCase().contains('ar') ? Alignment.centerRight : Alignment.centerLeft,
@@ -74,14 +76,18 @@ class LongTestView extends GetView<LongTestController> {
                     const SizedBox(width: 10.0,),
                     Text(
                       '${testController.question +  1} / ${testController.questions.length}',
-                      style: Styles.body3TextStyle,
+                      style: Styles.body3TextStyle.copyWith(
+                        color: context.theme.canvasColor
+                      ),
                     )
                   ],
                 ),
                 const SizedBox(height: 50,),
                 Text(
                   testController.questions[testController.question].question,
-                  style: Styles.headLine2TextStyle,
+                  style: Styles.headLine2TextStyle.copyWith(
+                    color: context.theme.badgeTheme.textColor
+                  ),
                 ),
                 SizedBox(height: 30.h,),
                 if(testController.questions[testController.question].type == Types.text)
@@ -114,7 +120,7 @@ class LongTestView extends GetView<LongTestController> {
                         onPressed: (){
                           controller.previousQuestion();
                         },
-                        bgColor: MyColors.selectedColor,
+                        bgColor: context.theme.cardColor,
                         textColor: MyColors.thirdColor,
                       ),
                     ),

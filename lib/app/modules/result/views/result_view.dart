@@ -48,7 +48,9 @@ class ResultView extends GetView<ResultController> {
                         ),
                         Text(
                           'result'.tr,
-                          style: Styles.headLine1TextStyle,
+                          style: Styles.headLine1TextStyle.copyWith(
+                            color: context.theme.canvasColor
+                          ),
                         ),
                       ],
                     ),
@@ -59,7 +61,9 @@ class ResultView extends GetView<ResultController> {
                 children: [
                   Text(
                     controller.result == Result.positive ? 'pres'.tr : 'nres'.tr,
-                    style: Styles.headLine2TextStyle,
+                    style: Styles.headLine2TextStyle.copyWith(
+                      color: context.theme.badgeTheme.textColor
+                    ),
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(height: 40.h,),
@@ -71,7 +75,9 @@ class ResultView extends GetView<ResultController> {
                   SizedBox(height: 50.h,),
                   Text(
                     controller.result == Result.positive ? 'pnote'.tr : 'nnote'.tr,
-                    style: Styles.body1TextStyle,
+                    style: Styles.body1TextStyle.copyWith(
+                      color: context.theme.canvasColor
+                    ),
                     textAlign: TextAlign.center,
                   )
                 ],

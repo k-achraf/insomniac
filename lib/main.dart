@@ -1,3 +1,5 @@
+import 'package:Insomniac/app/controllers/theme_controller.dart';
+import 'package:Insomniac/app/services/init_bindings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -12,6 +14,7 @@ import 'config/translation/localization_service.dart';
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await GetStorage.init();
+  ThemeController themeController = Get.put(ThemeController());
   runApp(
     ScreenUtilInit(
       designSize: const Size(390, 844),
@@ -26,18 +29,18 @@ void main() async{
           useInheritedMediaQuery: true,
           debugShowCheckedModeBanner: false,
           builder: (context,widget) {
-            return Theme(
-              data: MyTheme.theme,
-              child: MediaQuery(
-                data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
-                child: widget!,
-              ),
+            return MediaQuery(
+              data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+              child: widget!,
             );
           },
           initialRoute: AppPages.INITIAL, // first screen to show when app is running
           getPages: AppPages.routes, // app screens
           translations: LocalizationService.getInstance(),
           locale: Storage.getCurrentLocal(),
+          theme: MyTheme.theme,
+          darkTheme: MyTheme.darkTheme,
+          themeMode: themeController.themeMode,
         );
       },
     ),

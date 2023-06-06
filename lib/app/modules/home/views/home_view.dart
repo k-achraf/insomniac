@@ -34,13 +34,15 @@ class HomeView extends GetView<HomeController> {
               Text(
                 'INSOMNIAC',
                 style: Styles.headLine1TextStyle.copyWith(
-                  color: MyColors.questionColor
+                  color: context.theme.badgeTheme.textColor
                 ),
               ),
               SizedBox(height: 30.h,),
               Text(
                 'desc'.tr,
-                style: Styles.body3TextStyle,
+                style: Styles.body3TextStyle.copyWith(
+                  color: context.theme.canvasColor
+                ),
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: 100.h,),
@@ -61,7 +63,7 @@ class HomeView extends GetView<HomeController> {
                     Get.toNamed(Routes.LONG_TEST);
                   },
                   text: 'takethelongtest'.tr,
-                  bgColor: MyColors.selectedColor,
+                  bgColor: context.theme.cardColor,
                   textColor: MyColors.thirdColor,
                 ),
               ),
@@ -81,7 +83,7 @@ class HomeView extends GetView<HomeController> {
                     onPressed: (){
                       controller.changeLanguage('en');
                     },
-                    bgColor: MyColors.selectedColor,
+                    bgColor: context.theme.cardColor,
                     textColor: MyColors.primaryColor,
                   ),
                   SizedBox(width: 10.w,),
@@ -92,7 +94,75 @@ class HomeView extends GetView<HomeController> {
                     },
                   ),
                 ],
-              )
+              ),
+              SizedBox(height: 20.h,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    width: 50,
+                    height: 50,
+                    child: ElevatedButton(
+                      style: ButtonStyle(
+                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(25)),
+                          ),
+                        ),
+                        elevation: MaterialStateProperty.all<double>(
+                            2.0
+                        ),
+                        padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                            const EdgeInsets.all(5)
+                        ),
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                          MyColors.primaryColor
+                        ),
+                      ),
+                      onPressed: (){
+                        controller.changeTheme(true);
+                      },
+                      child: const Center(
+                        child: Icon(
+                          Icons.dark_mode
+                        )
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 20.w,),
+                  SizedBox(
+                    width: 50,
+                    height: 50,
+                    child: ElevatedButton(
+                      style: ButtonStyle(
+                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(25)),
+                          ),
+                        ),
+                        elevation: MaterialStateProperty.all<double>(
+                          2.0
+                        ),
+                        padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                          const EdgeInsets.all(5)
+                        ),
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                          MyColors.primaryColor
+                        ),
+                      ),
+                      onPressed: (){
+                        controller.changeTheme(false);
+                      },
+                      child: const Center(
+                        child: Icon(
+                          Icons.light_mode
+                        )
+                      ),
+                    ),
+                  )
+                ],
+              ),
+              SizedBox(height: 20.h,)
             ],
           ),
         ),
